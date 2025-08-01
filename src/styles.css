@@ -1,11 +1,12 @@
+/* scaled size */
 #minecraft-book {
-    transform: scale(2);
-    transform-origin: left top;
-    width: fit-content;
-    height: fit-content;
+    width: 292px;
+    height: 360px;
 }
 
 .book-container {
+    transform: scale(2);
+    transform-origin: left top;
     image-rendering: pixelated;
     position: relative;
     color: black;
@@ -39,8 +40,8 @@
     white-space: preserve;
     word-break: break-word;
     user-select: text;
-
 }
+
 .book-forward {
     bottom: 11px;
     right: 27px;
