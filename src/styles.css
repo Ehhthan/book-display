@@ -7,6 +7,8 @@
     width: 146px;
     height: 180px;
     background: url('./assets/textures/book/background.png') no-repeat left top;
+    transform: scale(2);
+    transform-origin: left top;
 }
 
 .book-text {
