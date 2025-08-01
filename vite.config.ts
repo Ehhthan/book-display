@@ -20,8 +20,7 @@ export default defineConfig({
         entryFileNames: '[name].js',
         assetFileNames: '[name][extname]',
         chunkFileNames: '[name].js',
-      },
-      external: ['react'],
+      }
     },
     commonjsOptions: {
       include: [/node_modules/],
