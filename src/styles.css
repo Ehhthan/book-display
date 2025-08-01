@@ -1,6 +1,8 @@
-.container-scaled {
+#minecraft-book {
     transform: scale(2);
     transform-origin: left top;
+    width: fit-content;
+    height: fit-content;
 }
 
 .book-container {
