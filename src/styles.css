@@ -1,0 +1,59 @@
+.book-container {
+    image-rendering: pixelated;
+    position: relative;
+    color: black;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 146px;
+    height: 180px;
+    background: url('./assets/textures/book/background.png') no-repeat left top;
+}
+
+.book-text {
+    font-family: "Minecraft", serif;
+    font-size: 10px;
+}
+
+.book-page-counter {
+    position: absolute;
+    right: 19px;
+    top: 12px;
+    text-align: right;
+}
+
+.book-text-content {
+    position: absolute;
+    left: 15px;
+    top: 29px;
+    width: 114px;
+    line-height: 0.9;
+    max-height: calc(0.9em * 14); /* 14 lines */
+    overflow: hidden;
+    white-space: preserve;
+    word-break: break-word;
+    user-select: text;
+
+}
+.book-forward {
+    bottom: 11px;
+    right: 27px;
+    width: 23px;
+    height: 13px;
+    background: url('./assets/textures/book/page_forward.png') no-repeat left top;
+}
+
+.book-backward {
+    bottom: 11px;
+    left: 27px;
+    width: 23px;
+    height: 13px;
+    background: url('./assets/textures/book/page_backward.png') no-repeat left top;
+}
+
+.book-button {
+    position: absolute;
+}
+
+.book-button:hover {
+    background-position: 0 -13px;
+}
