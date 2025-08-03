@@ -7,11 +7,13 @@ function init() {
 	const rootEl = document.getElementById('minecraft-book');
 	if (!rootEl) return;
 
-	const text = rootEl.dataset.json || "{text:\"None\"}";
+	const author = rootEl.dataset.author || "Unknown";
+	const title = rootEl.dataset.title || "Untitled";
+	const pages = rootEl.dataset.pages || "[\"No text has been found.\"]";
 
 	createRoot(rootEl).render(
 		<StrictMode>
-			<BookDisplay text={text} maxPages={2} />
+			<BookDisplay title={title} author={author} pages={JSON.parse(pages)} />
 		</StrictMode>,
 	);
 }

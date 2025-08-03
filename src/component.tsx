@@ -1,13 +1,21 @@
 import './styles.css'
-import MiniMessage from "minimessage-js";
 import {useState} from "react";
+import MiniMessage from "minimessage-js";
 
-export function BookDisplay({text, maxPages}: {text: string, maxPages: number}) {
+interface BookMeta {
+    author: string;
+    title: string;
+    pages: string[];
+}
+
+export function BookDisplay({author, title, pages}: BookMeta) {
     const [page, setPage] = useState(1);
+
+    const maxPages = pages.length;
 
     const component = MiniMessage
         .miniMessage()
-        .deserialize(text);
+        .deserialize(pages[page - 1]);
 
     return (
         <div className={'book-container'}>
@@ -40,6 +48,7 @@ export function BookDisplay({text, maxPages}: {text: string, maxPages: number}) 
                     }
                 }}
             />
+            <div className={"book-info"} draggable={false} title={"Title: " + title + "\n" + "Author: " + author }/>
 
         </div>
     );

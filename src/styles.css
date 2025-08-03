@@ -50,6 +50,18 @@
     background: url('./assets/textures/book/page_forward.png') no-repeat left top;
 }
 
+.book-info {
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background-size: auto;
+    background: url('./assets/textures/book/info.png') no-repeat;
+    width: 20px;
+    height: 20px;
+    transform: scale(0.5);
+    transform-origin: right bottom;
+}
+
 .book-backward {
     bottom: 11px;
     left: 27px;
