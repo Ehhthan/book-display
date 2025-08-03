@@ -9,11 +9,11 @@ function init() {
 
 	const author = rootEl.dataset.author || "Unknown";
 	const title = rootEl.dataset.title || "Untitled";
-	const pages = rootEl.dataset.pages || "[\"No text has been found.\"]";
+	const pages = rootEl.dataset.pages || "WyJObyBUZXh0Il0="; // in base 64 because of character escapes
 
 	createRoot(rootEl).render(
 		<StrictMode>
-			<BookDisplay title={title} author={author} pages={JSON.parse(pages)} />
+			<BookDisplay title={title} author={author} pages={JSON.parse(atob(pages))} />
 		</StrictMode>,
 	);
 }
