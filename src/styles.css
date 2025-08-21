@@ -87,6 +87,8 @@
     -webkit-user-select: none;
     user-select: none;
     width: 140px;
+    height: 100%;
+    overflow: visible;
 }
 
 .item-tooltip {
