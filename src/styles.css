@@ -77,3 +77,37 @@
 .book-button:hover {
     background-position: 0 -13px;
 }
+
+.item-tooltip-container {
+    transform: scale(2);
+    transform-origin: left top;
+    image-rendering: pixelated;
+    position: absolute;
+    color: black;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 140px;
+}
+
+.item-tooltip {
+    width: fit-content;
+    height: fit-content;
+    border: 8px solid transparent;
+    border-image-source: url(./assets/textures/tooltip/background.png);
+    border-image-slice: 28 fill;
+    border-image-repeat: stretch;
+    image-rendering: pixelated;
+    z-index: 20;
+}
+
+.item-tooltip-text {
+    font-family: "Minecraft", serif;
+    font-size: 10px;
+    line-height: 0.9;
+    user-select: none;
+    white-space: preserve;
+    overflow: hidden;
+    margin: -4px;
+    color: #c6b3b3;
+    filter: drop-shadow(1px 1px color-mix(in srgb, currentcolor , black));
+}
