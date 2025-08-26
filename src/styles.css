@@ -1,10 +1,10 @@
 /* scaled size */
-#minecraft-book {
+.book-container {
     width: 292px;
     height: 360px;
 }
 
-.book-container {
+.book-page {
     transform: scale(2);
     transform-origin: left top;
     image-rendering: pixelated;
@@ -79,15 +79,17 @@
 }
 
 .item-tooltip-container {
-    transform: scale(2);
-    transform-origin: left top;
-    image-rendering: pixelated;
     position: absolute;
+    bottom: 4px;
+    right: 4px;
+    background-size: auto;
+    background: url('./assets/textures/book/info.png') no-repeat;
+    image-rendering: pixelated;
     color: black;
     -webkit-user-select: none;
     user-select: none;
     width: 140px;
-    height: 100%;
+    height: fit-content;
     overflow: visible;
 }
 
