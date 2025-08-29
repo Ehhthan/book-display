@@ -1,13 +1,14 @@
-/* scaled size */
 .book-container {
-    width: 292px;
-    height: 360px;
+    --scale: 1;
+    overflow: visible !important;
+    transform-origin: top left;
+    transform: scale(var(--scale));
+    image-rendering: pixelated;
+    width: calc(146px * var(--scale));
+    height: calc(180px * var(--scale));
 }
 
 .book-page {
-    transform: scale(2);
-    transform-origin: left top;
-    image-rendering: pixelated;
     position: relative;
     color: black;
     -webkit-user-select: none;
@@ -15,6 +16,7 @@
     width: 146px;
     height: 180px;
     background: url('./assets/textures/book/background.png') no-repeat left top;
+    background-size: 100% 100%;
 }
 
 .book-text {
@@ -42,24 +44,20 @@
     user-select: text;
 }
 
+.book-button {
+    position: absolute;
+}
+
+.book-button:hover {
+    background-position: 0 -13px;
+}
+
 .book-forward {
     bottom: 11px;
     right: 27px;
     width: 23px;
     height: 13px;
     background: url('./assets/textures/book/page_forward.png') no-repeat left top;
-}
-
-.book-info {
-    position: absolute;
-    bottom: 4px;
-    right: 4px;
-    background-size: auto;
-    background: url('./assets/textures/book/info.png') no-repeat;
-    width: 20px;
-    height: 20px;
-    transform: scale(0.5);
-    transform-origin: right bottom;
 }
 
 .book-backward {
@@ -70,27 +68,21 @@
     background: url('./assets/textures/book/page_backward.png') no-repeat left top;
 }
 
-.book-button {
+.book-info {
     position: absolute;
-}
-
-.book-button:hover {
-    background-position: 0 -13px;
+    bottom: 4px;
+    right: 4px;
+    width: 10px;
+    height: 10px;
+    background: url('./assets/textures/book/info.png') no-repeat center center;
+    background-size: cover;
 }
 
 .item-tooltip-container {
     position: absolute;
-    bottom: 4px;
-    right: 4px;
-    background-size: auto;
-    background: url('./assets/textures/book/info.png') no-repeat;
-    image-rendering: pixelated;
     color: black;
     -webkit-user-select: none;
     user-select: none;
-    width: 140px;
-    height: fit-content;
-    overflow: visible;
 }
 
 .item-tooltip {
@@ -100,18 +92,22 @@
     border-image-source: url(./assets/textures/tooltip/background.png);
     border-image-slice: 28 fill;
     border-image-repeat: stretch;
-    image-rendering: pixelated;
     z-index: 20;
 }
 
 .item-tooltip-text {
     font-family: "Minecraft", serif;
-    font-size: 10px;
+    font-size: 8px;
     line-height: 0.9;
     user-select: none;
-    white-space: preserve;
     overflow: hidden;
+    white-space: pre;
+    max-width: 276px;
     margin: -4px;
-    color: #c6b3b3;
-    filter: drop-shadow(1px 1px color-mix(in srgb, currentcolor , black));
+
+}
+
+/* mc text shadow */
+.item-tooltip-text span {
+    text-shadow: 1px 1px rgb(from color-mix(in srgb, currentColor 75%, black 25%) r g b / 25%);
 }

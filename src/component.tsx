@@ -1,11 +1,12 @@
 import './styles.css'
-import {useState} from "react";
+import {type CSSProperties, useState} from "react";
 import MiniMessage from "minimessage-js";
 
 interface BookMeta {
     author: string;
     title: string;
     pages: string[];
+    scale?: number;
 }
 
 export function ItemTooltip({lines}: {lines: string[]}) {
@@ -22,7 +23,7 @@ export function ItemTooltip({lines}: {lines: string[]}) {
     );
 }
 
-export function BookDisplay({author, title, pages}: BookMeta) {
+export function BookDisplay({author, title, pages, scale = 2}: BookMeta) {
     const [page, setPage] = useState(1);
     const [isHovered, setHovered] = useState(false);
 
@@ -33,7 +34,7 @@ export function BookDisplay({author, title, pages}: BookMeta) {
         .deserialize(pages[page - 1]);
 
     return (
-        <>
+        <div className={'book-container'} style={{'--scale': scale} as CSSProperties}>
             <div className={'book-page'}>
                 <div className={"book-page-counter book-text"}>
                     Page {page} of {maxPages}
@@ -68,14 +69,12 @@ export function BookDisplay({author, title, pages}: BookMeta) {
                      draggable={false}
                      onMouseOver={() => setHovered(true)}
                      onMouseOut={() => setHovered(false)}
-                />
-                {isHovered &&
-                    <div className={"item-tooltip-container"}>
-                        <ItemTooltip lines={[`<white>Title: ${title}`, `Author: ${author}`, "wdwdwddwwdwddwwdwd"]} />
-                    </div>
-                }
+                >
+                    {isHovered &&
+                        <ItemTooltip lines={[`<white>Title: ${title}`, `Author: ${author}`]} />
+                    }
+                </div>
             </div>
-
-        </>
+        </div>
     );
 }
