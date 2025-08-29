@@ -25,7 +25,6 @@ export function ItemTooltip({lines}: {lines: string[]}) {
 
 export function BookDisplay({author, title, pages, scale = 2}: BookMeta) {
     const [page, setPage] = useState(1);
-    const [isHovered, setHovered] = useState(false);
 
     const maxPages = pages.length;
 
@@ -54,7 +53,7 @@ export function BookDisplay({author, title, pages, scale = 2}: BookMeta) {
                         }
                     }}
                 />
-
+              
                 <div
                     className={"book-button book-forward"}
                     draggable={false}
